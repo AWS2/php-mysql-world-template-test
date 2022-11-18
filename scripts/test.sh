@@ -1,8 +1,3 @@
-export COMPOSER_HOME="$HOME/.config/composer"
-composer install
-
-mysql < scripts/world.sql
-
 geckodriver &
 scripts/run.sh &
 
