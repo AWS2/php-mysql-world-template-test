@@ -1,4 +1,3 @@
-sudo apt-get update
-sudo apt-get install -y mysql-server
-sudo mysql < init-db.sql
-sudo mysql < world.sql
+#apt-get update
+#apt-get install -y php php-mysql php-curl php-mbstring php-xml
+#apt-get install -y firefox-geckodriver
