@@ -37,16 +37,14 @@ Start webapp in port 8000 in an independent shell:
     $ cd src
     $ php -S 0.0.0.0:8000
 
-### Shell 2: start geckodriver
-Start geckodriver (by default listens in port 4444) in another shell:
+### Shell 2: execute tests
+Run all tests in ``.tests`` folder (done with phpunit):
 
-    $ geckodriver
+    $ vendor/bin/phpunit .tests
 
-### Shell 3: execute tests
-Run all tests in ``tests`` folder (done with phpunit):
+You could also run tests one by one:
 
-    $ vendor/bin/phpunit tests
-
+    $ vendor/bin/phpunit .tests/TitleTest.php
 
 ## Troubleshooting
 
