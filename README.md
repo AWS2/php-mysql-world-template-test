@@ -23,7 +23,7 @@ References:
 
 Install dependencies:
 
-    $ sudo apt install php-curl php-mbstring php-xml
+    $ sudo apt install php-curl php-mbstring php-xml php-zip
 
 Install composer from here: https://getcomposer.org/download/
 
