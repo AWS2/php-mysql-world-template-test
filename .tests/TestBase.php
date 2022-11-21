@@ -14,9 +14,18 @@ class TestBase extends TestCase
 
     public static function setUpBeforeClass(): void 
     {
-        # start firefox
+        # Start PHP server
+        exec(".scripts/start.sh");
+
+        # Gecko driver
+        # setup vars
         $capabilities = DesiredCapabilities::firefox();
-        $capabilities->setCapability('moz:firefoxOptions', ['args' => ['-headless']]);
+        # get env vars
+        $headless = getenv('HEADLESS');
+        if( $headless!=="off" ) {
+            $capabilities->setCapability('moz:firefoxOptions', ['args' => ['-headless']]);
+        }
+        # start firefox
         self::$driver = FirefoxDriver::start($capabilities);
     }
     
@@ -24,6 +33,8 @@ class TestBase extends TestCase
     {
         # exit firefox
         self::$driver->quit();
+        # Stop PHP server
+        exec(".scripts/stop.sh");
     }
 
 }
