@@ -1,15 +1,8 @@
-apt-get update
-#apt-get install -y php php-mysql php-curl php-mbstring php-xml
-apt-get install -y firefox-geckodriver
-
-# php setup
-export COMPOSER_HOME="$HOME/.config/composer"
-composer install
+# pre test
 
 # setup DB
 docker-compose -f .scripts/docker-compose.yml up -d
-
-# start PHP web server
+# setup firefox driver & PHP web server
 .scripts/run.sh &
 
 # wait for DB to start
